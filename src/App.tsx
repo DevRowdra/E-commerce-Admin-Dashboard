@@ -16,7 +16,7 @@ function App() {
     <Router>
      <Suspense fallback={<Loader/>}>
      <Routes>
-      <Route path="/admin/deshboard" element={<Deshboard/>}> </Route>
+      <Route path="/admin/dashboard" element={<Deshboard/>}> </Route>
       <Route path="/admin/products" element={<Products></Products>}> </Route>
       <Route path="/admin/transaction" element={<Transaction></Transaction>}></Route>
       <Route path="/admin/customers" element={<Customers/>}></Route>
