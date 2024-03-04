@@ -20,6 +20,11 @@ function App() {
       <Route path="/admin/products" element={<Products></Products>}> </Route>
       <Route path="/admin/transaction" element={<Transaction></Transaction>}></Route>
       <Route path="/admin/customers" element={<Customers/>}></Route>
+
+      
+      {/* charts */}
+
+      {/* app */}
      </Routes>
      </Suspense>
       

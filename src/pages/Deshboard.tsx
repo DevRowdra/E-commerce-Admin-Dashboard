@@ -1,7 +1,13 @@
+import AdminSidebar from "../components/AdminSidebar"
 
 const Deshboard = () => {
   return (
-    <div>my  deshboard</div>
+    <div className="adminContainer" >
+<AdminSidebar></AdminSidebar>
+      <main>
+finde ure gole 
+      </main>
+    </div>
   )
 }
 
