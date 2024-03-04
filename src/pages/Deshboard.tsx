@@ -5,7 +5,7 @@ const Deshboard = () => {
     <div className="adminContainer" >
 <AdminSidebar></AdminSidebar>
       <main>
-finde ure gole 
+6.09 er 
       </main>
     </div>
   )

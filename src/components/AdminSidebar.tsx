@@ -1,8 +1,9 @@
 
+import { IconType } from "react-icons"
 import {  AiFillFileText } from "react-icons/ai"
 import { IoIosPeople } from "react-icons/io"
 import { RiDashboardFill, RiShoppingBag2Fill } from "react-icons/ri"
-import { Link,  useLocation } from "react-router-dom"
+import { Link,  Location,  useLocation } from "react-router-dom"
 
 const AdminSidebar = () => {
   const location=useLocation()
@@ -13,52 +14,48 @@ const AdminSidebar = () => {
         <div>
             <h5>Dashboard</h5>
             <ul>
-               <li style={
-                {backgroundColor:location.pathname.includes('admin/dashboard')?'rgba(0,115,255,0.1)':'white'}
-               } >
-                <Link to={"/admin/dashboard"}>
-                
-                <RiDashboardFill></RiDashboardFill>
-                Dashboard
-                </Link>
-               </li>
-               <li >
-                <Link to={"/admin/products"}>
-                
-                <RiShoppingBag2Fill></RiShoppingBag2Fill>
-                Product
-                </Link>
-               </li>
-               <li >
-                <Link to={"/admin/customers"}>
-                
-                <IoIosPeople></IoIosPeople>
-                Customer
-                </Link>
-               </li>
-               <li >
-                <Link to={"/admin/transaction"}>
-                
-                <AiFillFileText></AiFillFileText>
-                Transaction 
-                </Link>
-               </li>
-            </ul>
+              <Li url="/admin/dashboard" text="Dashboard" Icon={RiDashboardFill} location={location} ></Li>
+              <Li url="/admin/products" text="Products" Icon={RiShoppingBag2Fill} location={location} ></Li>
+               
+              <Li url="/admin/customers" text="Customers" Icon={IoIosPeople} location={location} ></Li>
+              <Li url="/admin/transaction" text="Transactions" Icon={AiFillFileText} location={location} ></Li>
+              
+            </ul> 
+        </div>
+        {/* Charts */}
+        <div>
+            <h5>Charts</h5>
+            <ul>
+              <Li url="/admin/dashboard" text="Bar" Icon={RiDashboardFill} location={location} ></Li>
+              <Li url="/admin/products" text="Pie" Icon={RiShoppingBag2Fill} location={location} ></Li>
+               
+              <Li url="/admin/customers" text="Line " Icon={IoIosPeople} location={location} ></Li>
+              <Li url="/admin/transaction" text="Transactions" Icon={AiFillFileText} location={location} ></Li>
+              
+            </ul> 
         </div>
     </aside>
   )
 }
-// interface LiProps {
-//   url:string,
-//   location: Location
-//   Icon:IconType
-//   text: string
-// }
-// const Li=({url,location,Icon,text}:LiProps)=><li>
-//   <Link to={url}>
-//     <Icon></Icon>
-//     {text}</Link>
+interface LiProps {
+  url:string,
+  location: Location
+  Icon:IconType
+  text: string
+}
+const Li=({url,location,Icon,text}:LiProps)=><li 
 
-// </li>
+style={
+  {backgroundColor:location.pathname.includes(url)?'rgba(0,115,255,0.1)':'white'}
+ }
+
+>
+  <Link  style={
+                {color:location.pathname.includes(url)?'rgba(0,115,255,)':'black'}
+               } to={url}>
+    <Icon></Icon>
+    {text}</Link>
+
+</li>
 
 export default AdminSidebar
